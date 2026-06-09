@@ -1,0 +1,28 @@
+package util;
+
+import java.util.Scanner;
+
+public class InputUtil {
+    private static Scanner sc = new Scanner(System.in);
+
+    public static int leerInt() {
+        while (true) {
+            try {
+                return Integer.parseInt(sc.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Número inválido, intenta nuevamente:");
+            }
+        }
+    }
+
+    public static String leerString() {
+        String input;
+        do {
+            input = sc.nextLine().trim();
+            if (input.isEmpty()) {
+                System.out.println("El texto no puede estar vacío, intenta nuevamente:");
+            }
+        } while (input.isEmpty());
+        return input;
+    }
+}
